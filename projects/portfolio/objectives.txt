@@ -1,0 +1,24 @@
+
+By developing this project, students will be able to:
+
+Describe the importance of creating a sketch before developing a website
+
+Use basic HTML tags to:
+    Add paragraphs and line breaks.
+    Add images
+    Add links
+    Bold text using <strong> 
+    Add comments
+    Create ordered and unordered list
+    Create a basic table with data
+    Create <div> containers
+    Adding external fonts 
+
+Use Semantic tags to:
+    Create header, footer, and side sections.
+    
+Apply CSS in an external file
+    Use classes and id to apply style
+    Change background and text color
+    Create a navigation menu
+    Center text and content
