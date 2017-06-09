@@ -28,7 +28,7 @@ if (isset($_GET['keyword'])) {
             }
             #carousel-example-generic {
                  margin: 0 auto;   
-                 width: 500px;
+                 width: 700px;
             }
         </style>
     </head>
@@ -55,10 +55,14 @@ if (isset($_GET['keyword'])) {
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="5"></li>
               </ol>
             
               <!-- Wrapper for slides -->
               <div class="carousel-inner" role="listbox">
+                <!--
                 <div class="item active">
                   <img src="<?=$imageURLs[0]?>" alt="...">
                   <div class="carousel-caption">
@@ -71,6 +75,19 @@ if (isset($_GET['keyword'])) {
                     ...
                   </div>
                 </div>
+                -->
+                <?php 
+                    for ($i = 0; $i < 6; $i++) {
+                        echo '<div class="item ';
+                        echo ($i == 0)?"active": "";
+                        echo  '">';
+                        echo '<img src="' . $imageURLs[$i] . '">';
+                        echo '<div class="carousel-caption">';
+                        echo '...';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                ?>
                 ...
               </div>
             
