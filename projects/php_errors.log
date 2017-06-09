@@ -16,3 +16,100 @@
 [09-Jun-2017 06:34:05 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/pixabayAPI.php on line 47
 [09-Jun-2017 06:34:05 UTC] PHP Stack trace:
 [09-Jun-2017 06:34:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/pixabayAPI.php:0
+[09-Jun-2017 07:25:18 UTC] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:25:18 UTC] PHP Stack trace:
+[09-Jun-2017 07:25:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:25:18 UTC] PHP Warning:  include(http://cst336.herokuapp.com/projects/slider/pixabayAPI.php): failed to open stream: no suitable wrapper could be found in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:25:18 UTC] PHP Stack trace:
+[09-Jun-2017 07:25:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:25:18 UTC] PHP Warning:  include(): Failed opening 'http://cst336.herokuapp.com/projects/slider/pixabayAPI.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:25:18 UTC] PHP Stack trace:
+[09-Jun-2017 07:25:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:25:18 UTC] PHP Fatal error:  Call to undefined function getImageURLs() in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 22
+[09-Jun-2017 07:25:18 UTC] PHP Stack trace:
+[09-Jun-2017 07:25:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:07 UTC] PHP Warning:  include(): https:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:07 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:07 UTC] PHP Warning:  include(https://cst336.herokuapp.com/projects/slider/pixabayAPI.php): failed to open stream: no suitable wrapper could be found in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:07 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:07 UTC] PHP Warning:  include(): Failed opening 'https://cst336.herokuapp.com/projects/slider/pixabayAPI.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:07 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:07 UTC] PHP Fatal error:  Call to undefined function getImageURLs() in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 22
+[09-Jun-2017 07:29:07 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:07 UTC] PHP Warning:  include(): https:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:07 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:07 UTC] PHP Warning:  include(https://cst336.herokuapp.com/projects/slider/pixabayAPI.php): failed to open stream: no suitable wrapper could be found in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:07 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:07 UTC] PHP Warning:  include(): Failed opening 'https://cst336.herokuapp.com/projects/slider/pixabayAPI.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:07 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:07 UTC] PHP Fatal error:  Call to undefined function getImageURLs() in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 22
+[09-Jun-2017 07:29:07 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:41 UTC] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:41 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:41 UTC] PHP Warning:  include(http://cst336.herokuapp.com/projects/slider/pixabayAPI.php): failed to open stream: no suitable wrapper could be found in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:41 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:41 UTC] PHP Warning:  include(): Failed opening 'http://cst336.herokuapp.com/projects/slider/pixabayAPI.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:41 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:41 UTC] PHP Fatal error:  Call to undefined function getImageURLs() in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 22
+[09-Jun-2017 07:29:41 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:41 UTC] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:41 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:41 UTC] PHP Warning:  include(http://cst336.herokuapp.com/projects/slider/pixabayAPI.php): failed to open stream: no suitable wrapper could be found in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:41 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:41 UTC] PHP Warning:  include(): Failed opening 'http://cst336.herokuapp.com/projects/slider/pixabayAPI.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:29:41 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:29:41 UTC] PHP Fatal error:  Call to undefined function getImageURLs() in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 22
+[09-Jun-2017 07:29:41 UTC] PHP Stack trace:
+[09-Jun-2017 07:29:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:36:37 UTC] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:36:37 UTC] PHP Stack trace:
+[09-Jun-2017 07:36:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:36:37 UTC] PHP Warning:  include(http://cst336.herokuapp.com/projects/slider/pixabayAPI.php): failed to open stream: no suitable wrapper could be found in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:36:37 UTC] PHP Stack trace:
+[09-Jun-2017 07:36:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:36:37 UTC] PHP Warning:  include(): Failed opening 'http://cst336.herokuapp.com/projects/slider/pixabayAPI.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:36:37 UTC] PHP Stack trace:
+[09-Jun-2017 07:36:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:36:37 UTC] PHP Fatal error:  Call to undefined function getImageURLs() in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 22
+[09-Jun-2017 07:36:37 UTC] PHP Stack trace:
+[09-Jun-2017 07:36:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:36:37 UTC] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:36:37 UTC] PHP Stack trace:
+[09-Jun-2017 07:36:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:36:37 UTC] PHP Warning:  include(http://cst336.herokuapp.com/projects/slider/pixabayAPI.php): failed to open stream: no suitable wrapper could be found in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:36:37 UTC] PHP Stack trace:
+[09-Jun-2017 07:36:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:36:37 UTC] PHP Warning:  include(): Failed opening 'http://cst336.herokuapp.com/projects/slider/pixabayAPI.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:36:37 UTC] PHP Stack trace:
+[09-Jun-2017 07:36:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:36:37 UTC] PHP Fatal error:  Call to undefined function getImageURLs() in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 22
+[09-Jun-2017 07:36:37 UTC] PHP Stack trace:
+[09-Jun-2017 07:36:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:41:28 UTC] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:41:28 UTC] PHP Stack trace:
+[09-Jun-2017 07:41:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:41:28 UTC] PHP Warning:  include(http://cst336.herokuapp.com/projects/slider/pixabayAPI.php): failed to open stream: no suitable wrapper could be found in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:41:28 UTC] PHP Stack trace:
+[09-Jun-2017 07:41:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:41:28 UTC] PHP Warning:  include(): Failed opening 'http://cst336.herokuapp.com/projects/slider/pixabayAPI.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 3
+[09-Jun-2017 07:41:28 UTC] PHP Stack trace:
+[09-Jun-2017 07:41:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:41:28 UTC] PHP Fatal error:  Call to undefined function getImageURLs() in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 22
+[09-Jun-2017 07:41:28 UTC] PHP Stack trace:
+[09-Jun-2017 07:41:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[09-Jun-2017 07:58:38 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 89
