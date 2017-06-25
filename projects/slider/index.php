@@ -17,47 +17,64 @@ if (isset($_GET['keyword'])) {
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <style>
+            @import url("css/styles.css");
             body{
                 background-image: url('<?=$backgroundImage?>');
-                opacity:0.9;
-                width:100%;
-                text-align:center;
-            }
-            input {
-                font-size: 3em;
-            }
-            #carousel-example-generic {
-                 margin: 0 auto;   
-                 width: 700px;
             }
         </style>
     </head>
     <body>
         <br/> <br />
         <form>
-            
             <input type="text" name="keyword" placeholder="Keyword">
             <input type="submit" value="Submit" />
-            
         </form>
         <br/> <br />
         <?php
-            if (isset($imageURLs)) {
-                shuffle($imageURLs); //need to change, too expensive
-               /*     for ($i = 0; $i < 5; $i++) {
+            if (!isset($imageURLs)) {
+             
+             echo "<h2> Type a keyword to display a slideshow <br /> with random images from Pixabay.com</h2>";
+                
+            }
+            else {
+                
+                //Start by displaying the first five images of the  $imageURLs array
+               /*   for ($i = 0; $i < 5; $i++) {
                         echo "<img src='" . $imageURLs[$i] . "'  width='200' >";
                     }*/
+                
+                //Explain that we want to display 5 random images, a way to do it would be
+               /*   for ($i = 0; $i < 5; $i++) {
+                        echo "<img src='" . $imageURLs[rand(0,count($imageURLs))] . "'  width='200' >";
+                    }*/                
+                    
+                //Explain that the potential issue is that there might be duplicated images    
+                shuffle($imageURLs); //too time consuming! only effective if we'd use all 100 images not only 5
+
             ?>
             
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
+                <!--
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="3"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="4"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+                -->
+                
+                <?php
+                 for ($i = 0; $i < 7; $i++) {
+                   //echo "<li data-target='#carousel-example-generic' data-slide-to='$i'></li>";
+                   echo "<li data-target='#carousel-example-generic' data-slide-to='$i'";
+                   echo ($i == 0)?" class='active'": "";  
+                   echo "></li>";
+                 } 
+               ?>
+                
               </ol>
             
               <!-- Wrapper for slides -->
@@ -77,15 +94,19 @@ if (isset($_GET['keyword'])) {
                 </div>
                 -->
                 <?php 
-                    for ($i = 0; $i < 6; $i++) {
+                    for ($i = 0; $i < 7; $i++) {
+                        do {
+                            $randomIndex = rand(0,count($imageURLs));
+                        } while  (!isset($imageURLs[$randomIndex]));
                         echo '<div class="item ';
                         echo ($i == 0)?"active": "";
                         echo  '">';
-                        echo '<img src="' . $imageURLs[$i] . '">';
+                        echo '<img src="' . $imageURLs[$randomIndex] . '">';
                         echo '<div class="carousel-caption">';
                         echo '...';
                         echo '</div>';
                         echo '</div>';
+                        unset($imageURLs[$randomIndex]); 
                     }
                 ?>
                 ...
@@ -101,14 +122,10 @@ if (isset($_GET['keyword'])) {
                 <span class="sr-only">Next</span>
               </a>
             </div>
-          
-            
-            
                     
         <?php            
             }
-
-?>
+        ?>
 
     </body>
 </html>

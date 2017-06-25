@@ -1,5 +1,6 @@
 <?php
 
+//returns array with 100 URLs to images from Pixabay.com, based on a "keyword"
 function getImageURLs($keyword, $orientation="horizontal") {
     $curl = curl_init();
     curl_setopt_array($curl, array(
