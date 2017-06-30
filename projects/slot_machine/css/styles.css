@@ -3,13 +3,16 @@
     img {
         border-radius:20px;
     }
+    
     body {
         background-color: black;
         background-image:url("../img/bg7.jpg");
         color: white;
-        font-family: 'Baloo Bhaina', cursive;
+        
     }
+    
     #main {
+        font-family: 'Baloo Bhaina', cursive;
         background-image:url("../img/machine.png");
         width:600px;
         height:500px;
@@ -17,21 +20,21 @@
         margin:0 auto;
     }
     
-    #fig0{
+    #reel1, #reel2, #reel3 {
         top:248px;
+        position:absolute;
+    }
+    
+    #reel1{
         left:145px;
-        position:absolute;
     }
-    #fig1{
-        top:248px;
+    #reel2{
         left:252px;
-        position:absolute;
     }
-    #fig2{
-        top:248px;
+    #reel3{
         left:357px;
-        position:absolute;
     }
+    
     input{
         top:75px;
         left:530px;
@@ -52,10 +55,13 @@
      text-align:center;
      top:450px;
      font-size:1.5em;
+     line-height: .7em;
     }
     
-    h1, h2{
-        margin:0px;
-        padding:0px;
-        
+    footer{
+        font-family: "Times New Roman", Georgia, Serif;
+        font-size:.8em;
+        width:600px;
+        margin:0 auto;
+        padding-top:10px;
     }

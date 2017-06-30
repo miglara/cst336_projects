@@ -1,46 +1,52 @@
 <?php
 
 function play() {
-
-    for ($i=0; $i<3; $i++){
-        ${"item" . $i} = rand(0,2);
-        showSlotItem(${"item" . $i}, $i); //need to pass position for images
+    
+    /*$reel1Val = rand(0,2);
+    showSlotItem($reel1Val, $i); 
+    $reel2Val = rand(0,2);
+    $reel3Val = rand(0,2);*/
+    
+      //Optionally, above three lines could be implemented in a for loop like the one below,
+     for ($i=1; $i<4; $i++){
+        ${"reel" . $i . "Val"} = rand(1,1);
+        showSlotItem(${"reel" . $i . "Val"}, $i); //need to pass position for images
     }
 
-    displayPoints($item0, $item1, $item2);
+    displayPoints($reel1Val, $reel2Val, $reel3Val);
 }
 
-function showSlotItem0($item){
-    switch ($item) {
-        case 0: echo "<img id='fig0' src='img/seven.png' alt='seven' title='Seven' width='70px' >";
+/*function showSlotItem0($reelVal){
+    switch ($reelVal) {
+        case 0: echo "<img id='reel1' src='img/seven.png' alt='seven' title='Seven' width='70px' >";
                 break;
         case 1: echo "<img id='fig1' src='img/cherry.png' alt='cherry' title='Cherry' width='70px' >";
                 break;
         case 2: echo "<img id='fig2' src='img/lemon.png' alt='lemon' title='Lemon' width='70px' >";
                 break;
     }
-}
+}*/
 
 
-function showSlotItem($item, $pos){
-    switch ($item) {
-        case 0: $figure = "seven";
+function showSlotItem($reelVal, $pos){
+    switch ($reelVal) {
+        case 0: $symbol = "seven";
                 break;
-        case 1: $figure = "cherry";
+        case 1: $symbol = "cherry";
                 break;
-        case 2: $figure = "lemon";
+        case 2: $symbol = "lemon";
                 break;
     }
     
-    echo "<img id='fig$pos' src='img/$figure.png' alt='$figure' title='". ucfirst($figure) . "' width='70px' >";
+    echo "<img id='reel$pos' src='img/$symbol.png' alt='$symbol' title='". ucfirst($symbol) . "' width='70px' >";
 
 }
 
-function displayPoints($item0, $item1, $item2) {
+function displayPoints($reel1Val, $reel2Val, $reel3Val) {
     
     echo "<div id='output'>";
-    if ($item0 == $item1 && $item1 == $item2) {
-        switch ($item0) {
+    if ($reel1Val == $reel2Val && $reel2Val == $reel3Val) {
+        switch ($reel1Val) {
             case 0: $totalPoints = 1000;
                     echo "<h1>Jackpot!</h1>";
                     break;
