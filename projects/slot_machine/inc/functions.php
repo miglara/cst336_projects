@@ -9,7 +9,7 @@ function play() {
     
       //Optionally, above three lines could be implemented in a for loop like the one below,
      for ($i=1; $i<4; $i++){
-        ${"reel" . $i . "Val"} = rand(1,1);
+        ${"reel" . $i . "Val"} = rand(0,2);
         showSlotItem(${"reel" . $i . "Val"}, $i); //need to pass position for images
     }
 
