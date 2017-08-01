@@ -1,6 +1,7 @@
 <?php
+    include 'functions.php';
     session_start();
-    
+
     // If 'removeId' has been sent, search the cart for that itemId and unset it
     if (isset($_POST['removeId'])) {
         foreach ($_SESSION['cart'] as $itemKey => $item) {
@@ -10,27 +11,12 @@
         }
     }
     
-    function displayCart() {
-        // If there are items in the Session, display them
-        if(isset($_SESSION['cart'])) {
-            echo "<table class='table'>";
-            foreach ($_SESSION['cart'] as $item) {
-                $itemId = $item['id'];
-                
-                // Create 'hidden' removeId field to tell the PHP program
-                // which itemId to remove
-                echo "<form method='post'>";
-                echo "<input type='hidden' name='removeId' value='$itemId'>";
-                
-                echo '<tr>';
-                echo "<td><img src='" . $item['img'] . "'></td>";
-                echo "<td>". $item['name'] . "</td>";
-                echo "<td>$". $item['price'] . "</td>";
-                echo '<td><button class="btn btn-danger">Remove</button></td>';
-                echo '</tr>';
-                echo '</form>';
+    // If 'itemId' quantity has been sent, search for the item with that ID and update quantity
+    if (isset($_POST['itemId'])) {
+        foreach ($_SESSION['cart'] as &$item) {
+            if ($item['id'] == $_POST['itemId']) {
+                $item['quantity'] = $_POST['update'];
             }
-            echo "</table>";
         }
     }
     
@@ -59,7 +45,9 @@
                         </div>
                         <ul class='nav navbar-nav'>
                             <li><a href='index.php'>Home</a></li>
-                            <li><a href='scart.php'>Cart</a></li>
+                            <li><a href='scart.php'>
+                            <span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'>
+                            </span> Cart: <?php displayCartCount(); ?> </a></li>
                         </ul>
                     </div>
                 </nav>

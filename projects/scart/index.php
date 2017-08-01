@@ -1,4 +1,6 @@
 <?php
+    include 'functions.php';
+
     // Start the session in any php file where you will be using sessions
     session_start();
     
@@ -19,51 +21,30 @@
     if (isset($_POST['itemName'])) {
         
         // Create associative array for item properties
-        $cartItem = array();
-        $cartItem['name'] = $_POST['itemName'];
-        $cartItem['price'] = $_POST['itemPrice'];
-        $cartItem['img'] = $_POST['itemImg'];
-        $cartItem['id'] = $_POST['itemId'];
+        $newItem = array();
+        $newItem['name'] = $_POST['itemName'];
+        $newItem['price'] = $_POST['itemPrice'];
+        $newItem['img'] = $_POST['itemImg'];
+        $newItem['id'] = $_POST['itemId'];
         
-        // Add the product's name to the Session cart
-        array_push($_SESSION['cart'], $cartItem);
+        // Check to see if other items with this id are in the array
+        // If so, this item isn't new.  Only update quantity
+        // Must be passed by reference so that each item can be updated!
+        foreach ($_SESSION['cart'] as &$item) {
+            if ($newItem['id'] == $item['id']) {
+                $item['quantity'] += 1;
+                $found = true;
+            }
+        }
         
-        // Direct the user to the shopping cart page
-        header('location: scart.php');
+        // else add it to array
+        if ($found != true) {
+            $newItem['quantity'] = 1;
+            array_push($_SESSION['cart'], $newItem);
+        }
+        
     }
     
-    // Displays the search results in a table
-    function displayResults() {
-        global $items; // Necessary to get the global items array
-        
-        if (isset($items)) {
-            echo "<table class='table'>";
-            foreach ($items as $item) {
-                $itemName = $item['name'];
-                $itemPrice = $item['salePrice'];
-                $itemImage = $item['thumbnailImage'];
-                $itemId = $item['itemId'];
-                
-                // Create 'hidden' fields to send item data via POST
-                echo "<form method='post'>";
-                echo "<input type='hidden' name='itemName' value='$itemName'>";
-                echo "<input type='hidden' name='itemPrice' value='$itemPrice'>";
-                echo "<input type='hidden' name='itemImg' value='$itemImage'>";
-                echo "<input type='hidden' name='itemId' value='$itemId'>";
-                
-                // Display table row w/ Add button for submitting form
-                echo '<tr>';
-                echo "<td><img src='$itemImage'></td>";
-                echo "<td>$itemId</td>";
-                echo "<td>$itemName</td>";
-                echo "<td>$$itemPrice</td>";
-                echo '<td><button class="btn btn-warning">Add</button></td>';
-                echo '</tr>';
-                echo '</form>';
-            }
-            echo "</table>";    
-        }
-    }
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +70,9 @@
                     </div>
                     <ul class='nav navbar-nav'>
                         <li><a href='index.php'>Home</a></li>
-                        <li><a href='scart.php'>Cart</a></li>
+                        <li><a href='scart.php'>
+                        <span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'>
+                        </span> Cart: <?php displayCartCount(); ?> </a></li>
                     </ul>
                 </div>
             </nav>
