@@ -51,3 +51,16 @@
         font-size: 1.3em;
     }
     
+    table {
+        margin: 0px auto;
+    }
+    
+    td {
+        padding-right: 10px;
+        font-size: 1.3em;
+    }
+    
+    td strong {
+        color: orange;
+    }
+    
