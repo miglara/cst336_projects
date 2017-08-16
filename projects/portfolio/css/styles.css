@@ -20,11 +20,6 @@
         margin-bottom: 0px;
     }
 
-    #profilePic{
-        border-radius: 100px;
-    }
-
-
     nav a {
         padding:15px;
         padding-bottom:4px;
@@ -64,3 +59,14 @@
         color: orange;
     }
     
+    #profilePic {
+        border-radius: 100px;
+    }
+    
+    #table-header {
+        background-color: #351a00;
+    }
+    
+    .table-row {
+        background-color: #753900;
+    }
