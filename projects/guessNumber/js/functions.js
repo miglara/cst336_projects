@@ -24,8 +24,8 @@
                 lastResult.style.backgroundColor = 'green';
                 lowOrHi.textContent = '';
                 setGameOver();
-              } else if (guessCount === 10) {
-                lastResult.textContent = '!!!GAME OVER!!!';
+              } else if (guessCount === 7) {
+                lastResult.textContent = 'Sorry, you lost!';
                 setGameOver();
               } else {
                 lastResult.textContent = 'Wrong!';
@@ -49,7 +49,7 @@
         guessSubmit.disabled = true;
         resetButton = document.createElement('button');
         resetButton.textContent = 'Start new game';
-        document.body.appendChild(resetButton);
+        document.querySelector('.resetButton').appendChild(resetButton);
         resetButton.addEventListener('click', resetGame);
       }
       
