@@ -1,39 +1,39 @@
-
       // Your JavaScript goes here
       var randomNumber = Math.floor(Math.random() * 99) + 1;
-      var guesses = document.querySelector('.guesses');
-      var lastResult = document.querySelector('.lastResult');
-      var lowOrHi = document.querySelector('.lowOrHi');
+      var guesses = document.querySelector('#guesses');
+      var lastResult = document.querySelector('#lastResult');
+      var lowOrHi = document.querySelector('#lowOrHi');
 
       var guessSubmit = document.querySelector('.guessSubmit');
       var guessField = document.querySelector('.guessField');
     
       var guessCount = 1;
-      var resetButton;
+      var resetButton = document.querySelector('#reset');
+      resetButton.style.display = 'none';
       guessField.focus();
       
       function checkGuess() {
             var userGuess = Number(guessField.value);
             if (guessCount === 1) {
-                guesses.textContent = 'Previous guesses: ';
+                guesses.innerHTML = 'Previous guesses: ';
             }
-            guesses.textContent += userGuess + ' ';
+            guesses.innerHTML += userGuess + ' ';
             
               if (userGuess === randomNumber) {
-                lastResult.textContent = 'Congratulations! You got it right!';
+                lastResult.innerHTML = 'Congratulations! You got it right!';
                 lastResult.style.backgroundColor = 'green';
-                lowOrHi.textContent = '';
+                lowOrHi.innerHTML = '';
                 setGameOver();
               } else if (guessCount === 7) {
-                lastResult.textContent = 'Sorry, you lost!';
+                lastResult.innerHTML = 'Sorry, you lost!';
                 setGameOver();
               } else {
-                lastResult.textContent = 'Wrong!';
+                lastResult.innerHTML = 'Wrong!';
                 lastResult.style.backgroundColor = 'red';
                 if(userGuess < randomNumber) {
-                  lowOrHi.textContent = 'Last guess was too low!';
+                  lowOrHi.innerHTML = 'Last guess was too low!';
                 } else if(userGuess > randomNumber) {
-                  lowOrHi.textContent = 'Last guess was too high!';
+                  lowOrHi.innerHTML = 'Last guess was too high!';
                 }
               }
              
@@ -47,9 +47,7 @@
       function setGameOver() {
         guessField.disabled = true;
         guessSubmit.disabled = true;
-        resetButton = document.createElement('button');
-        resetButton.textContent = 'Start new game';
-        document.querySelector('.resetButton').appendChild(resetButton);
+        resetButton.style.display = 'inline';
         resetButton.addEventListener('click', resetGame);
       }
       
@@ -61,7 +59,7 @@
           resetParas[i].textContent = '';
         }
       
-        resetButton.parentNode.removeChild(resetButton);
+        resetButton.style.display = 'none';
       
         guessField.disabled = false;
         guessSubmit.disabled = false;
