@@ -9,7 +9,7 @@ var words = [{ word: "snake", hint: "It's a reptile" },
 
 var selectedWord = "";
 var selectedHint = "";
-var currentWord = "";
+var board = "";
 var remainingGuesses = 6;
 
 // Begin the game when the page is fully loaded
@@ -22,6 +22,12 @@ $(".replayBtn").on("click", function() {
 });
 
 
+$("#letters").on("click", ".letter", function(){
+    checkLetter($(this).attr("id"));
+    disableButton($(this));
+});
+
+
 // Selects a word randomly from the array of available words
 function pickWord() {
     let randInt = Math.floor(Math.random() * words.length);
@@ -30,27 +36,28 @@ function pickWord() {
 }
 
 
+// Creates the letters inside the letters div
 function createLetters() {
     for (var letter of alphabet) {
         let letterInput = '"' + letter + '"';
-        $("#letters").append("<button class='btn btn-success' id='letterBtn_" + letter + "' onclick='checkLetter(" + letterInput + ", selectedWord)'>" + letter + "</button>");
+        $("#letters").append("<button class='btn btn-success letter' id='" + letter + "'>" + letter + "</button>");
     }
 }
 
 
-// Fill the currentWord with underscores
-function initWord(word) {
-    for (var letter in word) {
-        currentWord += '_';
+// Fill the board with underscores
+function initBoard() {
+    for (var letter in selectedWord) {
+        board += '_';
     }
 }
 
 
-// Update the display board with the current word
-function updateBoard(word) {
+// Update the display board
+function updateBoard() {
     $("#word").empty();
     
-    for (var letter of word) {
+    for (var letter of board) {
         $("#word").append(letter);
         $("#word").append(' ');
     }
@@ -63,25 +70,25 @@ function updateBoard(word) {
 // Update the current word then calls for a board update
 function updateWord(positions, letter) {
     for (var pos of positions) {
-        currentWord = replaceAt(currentWord, pos, letter)
+        board = replaceAt(board, pos, letter)
     }
     
-    updateBoard(currentWord);
+    updateBoard(board);
     
     // Check to see if this is a winning guess
-    if (!currentWord.includes('_')) {
+    if (!board.includes('_')) {
         endGame(true);
     }
 }
 
 
 // Checks to see if the selected letter exists in the selectedWord
-function checkLetter(letter, word) {
+function checkLetter(letter) {
     var positions = new Array();
     
     // Put all the positions the letter exists in an array
-    for (var i = 0; i < word.length; i++) {
-        if (letter == word[i]) {
+    for (var i = 0; i < selectedWord.length; i++) {
+        if (letter == selectedWord[i]) {
             positions.push(i);
         }
     }
@@ -97,10 +104,6 @@ function checkLetter(letter, word) {
             endGame(false);
         }
     }
-    
-    // Disable the button
-    disableButton($("#letterBtn_" + letter));
-    
 }
 
 
@@ -117,8 +120,8 @@ function startGame() {
     createLetters();
     
     // Fill up the current guess word with underscores and set the board
-    initWord(selectedWord);
-    updateBoard(currentWord);
+    initBoard();
+    updateBoard();
 }
 
 
