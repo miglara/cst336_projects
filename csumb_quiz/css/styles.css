@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+    font-family: Calibri;
+    font-size: 1.15em;
+}
+
+input {
+    padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+}
+
+select {
+    padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+}
+
+.answer {
+    display: block;
+}
+
+.correct { /* For Correct Answers */
+    color: green;
+}
+ 
+.incorrect { /* For Incorrect Answers */
+    color: red;
+}
+
+
+
+
+/* Extra */
+
+/*Content Wrapper for everything under user menu*/ 
+.content-wrapper {
+    top: 120px;
+    position: relative;
+}
+
+/* User Fixed Menu When Logged In*/
+.user-menu {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    position: fixed;
+    border-bottom: 1px solid black;
+    padding: 1em;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: lightblue;
+}
