@@ -9,8 +9,10 @@ function play() {
     
       //Optionally, above three lines could be implemented in a for loop like the one below,
      for ($i=1; $i<4; $i++){
-        ${"reel" . $i . "Val"} = rand(0,2);
-        showSlotItem(${"reel" . $i . "Val"}, $i); //need to pass position for images
+//        ${"reel" . $i . "Val"} = rand(0,2);
+      //  showSlotItem(${"reel" . $i . "Val"}, $i); //need to pass position for images
+      ${"reel" . $i . "Val"} = showSlotItem($i); //need to pass position for images
+
     }
 
     displayPoints($reel1Val, $reel2Val, $reel3Val);
@@ -28,7 +30,9 @@ function play() {
 }*/
 
 
-function showSlotItem($reelVal, $pos){
+//function showSlotItem($reelVal, $pos){
+function showSlotItem($pos){
+    $reelVal = rand(0,2);
     switch ($reelVal) {
         case 0: $symbol = "seven";
                 break;
@@ -39,7 +43,7 @@ function showSlotItem($reelVal, $pos){
     }
     
     echo "<img id='reel$pos' src='img/$symbol.png' alt='$symbol' title='". ucfirst($symbol) . "' width='70px' >";
-
+    return $reelVal;
 }
 
 function displayPoints($reel1Val, $reel2Val, $reel3Val) {

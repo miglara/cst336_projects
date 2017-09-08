@@ -1,61 +1,76 @@
 $(document).ready(function(){
-    $("form").submit(function(event){
-        var score = 0;
+    
+    $("#logoutBtn").click( function() {
+        window.location.href="logout.php";
+        }
+    );
+    
+    var score = 0;
+    $("form").submit(function(event) {
+        
         event.preventDefault();
         
         //Get answers
         var answer1 = $("input[name='question1']").val().trim();
         var answer2 = $("input[name='question2']:checked").val();
         
-        // Check if answers are valid (if either are undefined/null the values are set to "")
-        // Ternary Operator (?)
-        answer1 = (answer1 == null)? "" : answer1;
-        answer2 = (answer2 == null)? "" : answer2;
-        
         //Check answers
-        
         // Question 1
-        if(answer1.localeCompare("1994") == 0)
-        {
-            $("#question1-feedback").html("<span class='answer correct'>Correct! The answer was <strong>1994</strong><span>");
-            score++;
+        if(answer1 === "1994") {
+            correctAnswer($("#question1-feedback"));
         } 
-        else 
-        {  
-            $("#question1-feedback").html("<span class='answer incorrect'>Incorrect! The answer was <strong>1994</strong><span>"); 
-            
+        else {  
+            incorrectAnswer($("#question1-feedback"));
         }
+        
+        $("#question1-feedback").append("The answer is <strong>1994</strong>" );
         
         // Question 2
-        if(answer2.localeCompare("C") == 0)
-        {
-            $("#question2-feedback").html("<span class='answer correct'>Correct! The answer was <strong>Monte Rey</strong><span>");
-            score++;
+        if(answer2 === "C") {   
+            correctAnswer($("#question2-feedback"));
         } 
-        else 
-        { 
-            $("#question2-feedback").html("<span class='answer incorrect'>Incorrect! The answer was <strong>Monte Rey</strong><span>"); 
-            
+        else { 
+            incorrectAnswer($("#question2-feedback"));
         }
+        $("#question2-feedback").append("The answer is <strong>Monte Rey</strong>" );
         
+        $("#score").html( score );
+        $("#waiting").html("<img src='img/loading.gif' alt='submitting data' />");
+        $("input[type='submit']").css("display","none");
         
-        // Display Score
-        $("form input[type='submit']").hide();
-        $("form").before("<h2>Your final score is " + score + "!</h2>");
-    
-        //submit scores
-        var data = {
-            "score" : score
-        };
-        
+        //Submits and stores score, retrieves average score
         $.ajax({
-            url : "submitscores.php",
             type : "post",
-            data : data,
+            url  : "submitscores.php",            
+            dataType : "json",
+            data : {"score" : score},            
             success : function(data){
-                $("#scores").html(data);
-                console.log(data);
+                //console.log(data);
+                $("#times").html(data.times);
+                $("#average").html(data.average);
+                $("#feedback").css("display","block");
+                $("#waiting").html("");
+                $("input[type='submit']").css("display","");
+            },
+            complete: function(data,status) { //optional, used for debugging purposes
+               // alert(status);
             }
-        });
-    });
-});        
+
+        });//AJAX
+        
+    }); //formSubmit
+    
+    function correctAnswer(questionFeedback){
+        questionFeedback.html("Correct! ");
+        questionFeedback.addClass("correct");
+        questionFeedback.removeClass("incorrect");
+        score++;
+    }
+    
+    function incorrectAnswer(questionFeedback){
+        questionFeedback.html("Incorrect! ");
+        questionFeedback.addClass("incorrect");
+        questionFeedback.removeClass("correct");
+    }
+    
+}); //documentReady       

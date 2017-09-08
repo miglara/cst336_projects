@@ -12,8 +12,7 @@ $stmt->execute($data);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if(isset($user['username'])){
     $_SESSION['username'] = $user['username'];
-    echo "Logged in successful.
-    <a href='index.php' >Visit the Quiz</a>";
+    header('Location: index.php');
 } else {
     echo "The values you entered were incorrect.
     <a href='login.php' >Retry</a>";

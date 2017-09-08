@@ -3,14 +3,12 @@
     <head>
         <title>Login</title>
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="js/login.js"></script>
     </head>
     <body>
         <h1>Login</h1>
         <h2>Credentials required before submiting form.</h2>
         <p>You can log in using usernames <strong>user_1</strong> or <strong>user_2</strong>. The password is <strong>s3cr3t</strong>.</p>
-        <form method="post" onsubmit="return false">
+        <form method="post" action="verifyuser.php">
             <input type="text" name="username" placeholder="Username"/><br />
             <input type="password" name="password" placeholder="Password" /><br />
             <input type="submit" name="submit" value="Login"/>

@@ -1,21 +1,22 @@
 body {
-    text-align: center;
     font-family: Calibri;
     font-size: 1.15em;
 }
 
-input {
-    padding: 0.5em 1em;
-    margin-bottom: 0.5em;
+h1 {
+    text-align: center;
+    margin-top: 0px;
 }
 
-select {
-    padding: 0.5em 1em;
-    margin-bottom: 0.5em;
+#quiz, #mascot {
+    display: inline-block;   
+    vertical-align: top;
+    padding:10px;
 }
 
 .answer {
-    display: block;
+    background-color: yellow;
+    margin: 5px;
 }
 
 .correct { /* For Correct Answers */
@@ -26,15 +27,19 @@ select {
     color: red;
 }
 
-
-
-
-/* Extra */
+#feedback {
+    display: none;  /*Hides feedback when accessing quiz */
+    margin: 0 auto;
+    text-align: center;
+}
 
 /*Content Wrapper for everything under user menu*/ 
 .content-wrapper {
-    top: 120px;
+    top: 100px;
     position: relative;
+    width:850px;
+    margin:0 auto;
+    text-align: left;
 }
 
 /* User Fixed Menu When Logged In*/
