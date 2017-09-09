@@ -15,6 +15,7 @@ function getDBConnection() {
         $dbName = substr($url["path"], 1);
         $username = $url["user"];
         $password = $url["pass"];
+        echo $url;
     } 
     
     try {
@@ -25,7 +26,7 @@ function getDBConnection() {
         $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
     }
     catch (PDOException $e) {
-       echo "Problems connecting to database!";
+       echo "Problems connecting to database! <br /> " . $e;
        exit();
     }
     
