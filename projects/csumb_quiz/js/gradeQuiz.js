@@ -41,7 +41,7 @@ $(document).ready(function(){
         //Submits and stores score, retrieves average score
         $.ajax({
             type : "post",
-            url  : "submitscores.php",            
+            url  : "submitScores.php",            
             dataType : "json",
             data : {"score" : score},            
             success : function(data){
