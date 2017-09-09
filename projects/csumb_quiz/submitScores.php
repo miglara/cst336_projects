@@ -6,7 +6,7 @@ $connect = getDBConnection();
 
 $score = $_POST['score'];
 
-$sql = "INSERT INTO scores (username, score) 
+$sql = "INSERT INTO csumb_quiz_scores (username, score) 
         VALUES (:username, :score)";
 $data = array(
     ":username" => $_SESSION['username'],
@@ -16,7 +16,7 @@ $stmt = $connect->prepare($sql);
 $stmt->execute($data);
 
 $sql = "SELECT count(1) times, avg(score) average 
-        FROM scores 
+        FROM csumb_quiz_scores 
         WHERE username = :username";
 $stmt = $connect->prepare($sql);
 $stmt->execute(array(":username"=>$_SESSION['username']));

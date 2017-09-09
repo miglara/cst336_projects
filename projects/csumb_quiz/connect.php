@@ -15,7 +15,6 @@ function getDBConnection() {
         $dbName = substr($url["path"], 1);
         $username = $url["user"];
         $password = $url["pass"];
-        print_r($url);
     } 
     
     try {

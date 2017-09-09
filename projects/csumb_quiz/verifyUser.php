@@ -4,7 +4,7 @@ session_start();
 include 'connect.php';
 $connect = getDBConnection();
 
-$sql = "SELECT * FROM users 
+$sql = "SELECT * FROM csumb_quiz_users 
         WHERE username = :username 
           AND password = :password";
 $stmt = $connect->prepare($sql);
