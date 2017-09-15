@@ -4,10 +4,16 @@ $backgroundImage = "img/sea.jpg";
 
 if (isset($_GET['keyword'])) {
     include 'api/pixabayAPI.php';
-    $imageURLs = getImageURLs($_GET['keyword']);
+    $imageURLs = getImageURLs($_GET['keyword'], $_GET['layout']);
     $backgroundImage = $imageURLs[array_rand($imageURLs)]; //gets random image URL from the array
 }
 
+function selectedOption($option){
+    
+    if ($option == $_GET['keyword']) {
+        return "selected";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,6 +33,19 @@ if (isset($_GET['keyword'])) {
         <br/> <br />
         <form>
             <input type="text" name="keyword" placeholder="Keyword">
+            <div id="layoutDiv">
+                <input type="radio" name="layout" value="horizontal" id="layout_h" <?=($_GET['layout']=="horizontal")?"checked":""?>/>
+                <label for="layout_h"> Horizontal </label><br />
+                 <input type="radio" name="layout" value="vertical" id="layout_v"  <?=($_GET['layout']=="vertical")?"checked":""?> />
+                 <label for="layout_v"> Vertical </label><br />
+            </div>
+            <br />
+            <select name="keyword" style="color:black; font-size:1.5em">
+                 <option value="ocean" <?=selectedOption('sea')?> > Sea </option>
+                 <option <?=selectedOption('Mountains')?>> Mountains </option>
+                 <option <?=selectedOption('Forest')?>> Forest </option>
+                 <option <?=selectedOption('Sky')?>> Sky </option>
+            </select><br /><br />
             <input type="submit" value="Submit" />
         </form>
         <br/> <br />
@@ -53,7 +72,7 @@ if (isset($_GET['keyword'])) {
 
             ?>
             
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" <?=($_GET['layout']=='vertical')?"style='width:300px'":''?>>
               <!-- Indicators -->
               <ol class="carousel-indicators">
                 <!--
