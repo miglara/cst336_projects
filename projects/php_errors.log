@@ -264,3 +264,29 @@ Stack trace:
 [15-Sep-2017 20:53:40 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 99
 [15-Sep-2017 20:53:40 UTC] PHP Stack trace:
 [15-Sep-2017 20:53:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[15-Sep-2017 21:27:14 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 99
+[15-Sep-2017 21:27:15 UTC] PHP Stack trace:
+[15-Sep-2017 21:27:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[15-Sep-2017 21:27:15 UTC] PHP   2. count() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:99
+[15-Sep-2017 21:38:41 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 99
+[15-Sep-2017 21:38:41 UTC] PHP Stack trace:
+[15-Sep-2017 21:38:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[15-Sep-2017 21:45:53 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 99
+[15-Sep-2017 21:45:53 UTC] PHP Stack trace:
+[15-Sep-2017 21:45:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[15-Sep-2017 21:49:35 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 99
+[15-Sep-2017 21:49:35 UTC] PHP Stack trace:
+[15-Sep-2017 21:49:35 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[15-Sep-2017 21:49:35 UTC] PHP   2. rand() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:99
+[15-Sep-2017 21:51:10 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 99
+[15-Sep-2017 21:51:10 UTC] PHP Stack trace:
+[15-Sep-2017 21:51:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[15-Sep-2017 21:51:14 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 99
+[15-Sep-2017 21:51:14 UTC] PHP Stack trace:
+[15-Sep-2017 21:51:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[15-Sep-2017 21:51:38 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 99
+[15-Sep-2017 21:51:38 UTC] PHP Stack trace:
+[15-Sep-2017 21:51:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
+[15-Sep-2017 21:54:36 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php on line 111
+[15-Sep-2017 21:54:36 UTC] PHP Stack trace:
+[15-Sep-2017 21:54:36 UTC] PHP   1. {main}() /home/ubuntu/workspace/herokuProjects/cst336_projects/projects/slider/index.php:0
