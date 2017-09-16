@@ -4,7 +4,14 @@ $backgroundImage = "img/sea.jpg";
 
 if (isset($_GET['keyword'])) {
     include 'api/pixabayAPI.php';
-    $imageURLs = getImageURLs($_GET['keyword'], $_GET['layout']);
+    
+    $keyword = $_GET['keyword'];
+    
+    if (!empty($_GET['category'])) {  //value was selected from drowndown menu
+        $keyword = $_GET['category'];
+    }
+    
+    $imageURLs = getImageURLs($keyword, $_GET['layout']);
     $backgroundImage = $imageURLs[array_rand($imageURLs)]; //gets random image URL from the array
 }
 
@@ -26,6 +33,7 @@ function selectedOption($option){
             @import url("css/styles.css");
             body{
                 background-image: url('<?=$backgroundImage?>');
+                background-size: 100% 100%;
             }
         </style>
     </head>
@@ -40,7 +48,8 @@ function selectedOption($option){
                  <label for="layout_v"> Vertical </label><br />
             </div>
             <br />
-            <select name="keyword" style="color:black; font-size:1.5em">
+            <select name="category" style="color:black; font-size:1.5em">
+                 <option value=""> - Select One - </option>
                  <option value="ocean" <?=selectedOption('sea')?> > Sea </option>
                  <option <?=selectedOption('Mountains')?>> Mountains </option>
                  <option <?=selectedOption('Forest')?>> Forest </option>
