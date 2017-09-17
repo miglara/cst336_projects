@@ -5,7 +5,7 @@ $backgroundImage = "img/sea.jpg";
 if (isset($_GET['keyword'])) {
     
     //checks if user submitted keyword or category, condition should be added after completing tutorial
-    if ( empty($_GET['keyword']) || empty($_GET['category']) ) {
+    if ( empty($_GET['keyword']) && empty($_GET['category']) ) {
         $noKeyword = true;
     }
     
