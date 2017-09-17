@@ -3,6 +3,13 @@
 $backgroundImage = "img/sea.jpg";
 
 if (isset($_GET['keyword'])) {
+    
+    //checks if user submitted keyword or category, condition should be added after completing tutorial
+    if ( empty($_GET['keyword']) || empty($_GET['category']) ) {
+        $noKeyword = true;
+    }
+    
+    
     include 'api/pixabayAPI.php';
     
     $keyword = $_GET['keyword'];
@@ -42,6 +49,8 @@ function selectedOption($option){
         <br/> <br />
         <form>
             <input type="text" name="keyword" placeholder="Keyword">
+            
+            <!--Layout and Category sections will be added after completing the tutorial-->
             <div id="layoutDiv">
                 <input type="radio" name="layout" value="horizontal" id="layout_h" <?=($_GET['layout']=="horizontal")?"checked":""?>/>
                 <label for="layout_h"> Horizontal </label><br />
@@ -60,6 +69,13 @@ function selectedOption($option){
         </form>
         <br/> <br />
         <?php
+        
+            //this condition will be added after completing tutorial, as part of form validation
+            if (isset($noKeyword)) {
+                echo "<h2> You must type a keyword or select a category </h2>";
+                return;
+            }
+        
             if (!isset($imageURLs)) {
              
              echo "<h2> Type a keyword to display a slideshow <br /> with random images from Pixabay.com</h2>";
