@@ -34,6 +34,7 @@ function selectedOption($option){
             body{
                 background-image: url('<?=$backgroundImage?>');
                 background-size: 100% 100%;
+                background-attachment: fixed;
             }
         </style>
     </head>
