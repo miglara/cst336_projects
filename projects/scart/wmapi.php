@@ -14,17 +14,17 @@
           ),
         ));
         
-        echo $curl;
+        //echo $curl;
         
         $jsonData = curl_exec($curl);
         $data = json_decode($jsonData, true);
         $items = $data['items'];
         
-        print_r($items);
+        //print_r($items);
         
         return $items;
     }
     
-    getProducts("ipad");
+    //getProducts("ipad");
     
 ?>
