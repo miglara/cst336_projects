@@ -1,0 +1,12 @@
+.jumbotron {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #7cbed8;
+    background-image: url('https://www.elegantthemes.com/blog/wp-content/uploads/2015/12/poll-plugins-thumbnail.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.row {
+    margin-bottom: 20px;
+}

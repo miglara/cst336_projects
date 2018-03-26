@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Poll </title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/final.css">
+    </head>
+    <body>
+
+      <div class="container-fluid">
+          <div class="jumbotron">
+            <h1>Let's Vote!</h1>
+          </div>
+          <div class="row">
+              <div class="col-sm-5 col-sm-offset-1">
+                  <h3>Would you recommend Overwatch to a friend?</h3>
+                  <label class="radio-inline"><input type="radio" name="q1" value="option1">Strongly Disagree</label>
+                  <label class="radio-inline"><input type="radio" name="q1" value="option2">Disagree</label>
+                  <label class="radio-inline"><input type="radio" name="q1" value="option3">Neutral</label>
+                  <label class="radio-inline"><input type="radio" name="q1" value="option4">Agree</label>
+                  <label class="radio-inline"><input type="radio" name="q1" value="option5">Strongly Agree</label>
+                  <button type="button" class="btn btn-info" id="q1">Submit</button>
+              </div>
+              <div class="col-sm-5">
+                  <div id="container-q1"></div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-5 col-sm-offset-1">
+                  <h3>Is Fortnite overrated?</h3>
+                  <label class="radio-inline"><input type="radio" name="q2" value="option1">Strongly Disagree</label>
+                  <label class="radio-inline"><input type="radio" name="q2" value="option2">Disagree</label>
+                  <label class="radio-inline"><input type="radio" name="q2" value="option3">Neutral</label>
+                  <label class="radio-inline"><input type="radio" name="q2" value="option4">Agree</label>
+                  <label class="radio-inline"><input type="radio" name="q2" value="option5">Strongly Agree</label>
+                  <button type="button" class="btn btn-info" id="q2">Submit</button>
+              </div>
+              <div class="col-sm-5">
+                  <div id="container-q2"></div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-5 col-sm-offset-1">
+                  <h3>I am excited for Far Cry 5.</h3>
+                  <label class="radio-inline"><input type="radio" name="q3" value="option1">Strongly Disagree</label>
+                  <label class="radio-inline"><input type="radio" name="q3" value="option2">Disagree</label>
+                  <label class="radio-inline"><input type="radio" name="q3" value="option3">Neutral</label>
+                  <label class="radio-inline"><input type="radio" name="q3" value="option4">Agree</label>
+                  <label class="radio-inline"><input type="radio" name="q3" value="option5">Strongly Agree</label>
+                  <button type="button" class="btn btn-info" id="q3">Submit</button>
+              </div>
+              <div class="col-sm-5">
+                  <div id="container-q3"></div>
+              </div>
+          </div>
+      </div>
+      <!-- We also need to add over here the Total number of respondents -->
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script>
+        
+        
+        //Event Handlers
+        $("button").click(function(){
+            var polls = ["q1", "q2", "q3"];
+            var qId = $(this).attr("id");
+            var choice = $("input[name='" + qId + "']:checked").val();
+            updatePoll(choice, qId);
+            for (i = 0; i < polls.length; i++) {
+                if (i != jQuery.inArray(qId, polls)) {
+                    retrieveData(polls[i]);
+                }
+            }
+           }
+        );
+
+        //Functions
+        function updatePoll(choice, qId) {
+           $("#container-"+qId).html("<img src='img/loading.gif' alt='loading'>");
+
+            //Include here the AJAX call 
+            $.ajax(
+            {
+                type: "get",
+                url: "inc/functions.php",
+                dataType: "json",
+                data: { "userChoice": choice,
+                        "pollId": qId
+                },
+                success: function(data,status) {
+                    // console.log(data);  //use console first then "Network"
+                    displayPollChart(data.pollId, parseInt(data.option1), parseInt(data.option2), parseInt(data.option3), parseInt(data.option4), parseInt(data.option5));
+                    //Need to display here total number of respondents
+                },
+                complete: function(data,status) {
+                    //alert(status);  debugging purposes
+                }
+            });
+        }
+        
+        function retrieveData(qId) {
+            //Include here the AJAX call 
+            $.ajax(
+            {
+                type: "get",
+                url: "inc/functions.php",
+                dataType: "json",
+                data: { "firstPollID": qId,
+                },
+                success: function(data,status) {
+                    // console.log(data);  //use console first then "Network"
+                    displayPollChart(data.pollId, parseInt(data.option1), parseInt(data.option2), parseInt(data.option3), parseInt(data.option4), parseInt(data.option5));
+                    //Need to display here total number of respondents
+                },
+                complete: function(data,status) {
+                    //alert(status);  debugging purposes
+                }
+            });
+        }
+        
+        //******
+        // Displays poll chart. For more info about charts visit https://www.highcharts.com/demo
+        // Parameters:
+        // option1 to option5 must be integers, represent the total users who selected each option
+        //*******
+        function displayPollChart(pollId,option1,option2,option3,option4,option5) {
+            Highcharts.chart('container-'+pollId, {
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        type: 'pie'
+                    },
+                    title: {
+                        text: ''
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                style: {
+                                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                }
+                            }
+                        }
+                    },
+                    series: [{
+                        name: pollId+'s',
+                        colorByPoint: true,
+                        data: [{
+                            name: 'Strongly Disagree',
+                            y: option1,
+                            sliced: true,
+                            selected: true
+                        }, {
+                            name: 'Disagree',
+                            y: option2,
+                        }, {
+                            name: 'Neutral',
+                            y: option3
+                        }, {
+                            name: 'Agree',
+                            y: option4
+                        }, {
+                            name: 'Strongly Agree',
+                            y: option5
+                        },
+                        ]
+                    }]
+                });
+        }//endFunction
+        
+        </script>
+    </body>
+</html>
