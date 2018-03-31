@@ -71,11 +71,6 @@
             var qId = $(this).attr("id");
             var choice = $("input[name='" + qId + "']:checked").val();
             updatePoll(choice, qId);
-            for (i = 0; i < polls.length; i++) {
-                if (i != jQuery.inArray(qId, polls)) {
-                    retrieveData(polls[i]);
-                }
-            }
            }
         );
 
@@ -103,32 +98,13 @@
             });
         }
         
-        function retrieveData(qId) {
-            //Include here the AJAX call 
-            $.ajax(
-            {
-                type: "get",
-                url: "inc/functions.php",
-                dataType: "json",
-                data: { "firstPollID": qId,
-                },
-                success: function(data,status) {
-                    // console.log(data);  //use console first then "Network"
-                    displayPollChart(data.pollId, parseInt(data.option1), parseInt(data.option2), parseInt(data.option3), parseInt(data.option4), parseInt(data.option5));
-                    //Need to display here total number of respondents
-                },
-                complete: function(data,status) {
-                    //alert(status);  debugging purposes
-                }
-            });
-        }
-        
         //******
         // Displays poll chart. For more info about charts visit https://www.highcharts.com/demo
         // Parameters:
         // option1 to option5 must be integers, represent the total users who selected each option
         //*******
         function displayPollChart(pollId,option1,option2,option3,option4,option5) {
+            var total = option1 + option2 + option3 + option4 + option5;
             Highcharts.chart('container-'+pollId, {
                     chart: {
                         plotBackgroundColor: null,
@@ -137,7 +113,7 @@
                         type: 'pie'
                     },
                     title: {
-                        text: ''
+                        text: 'Total submissions: ' + total
                     },
                     tooltip: {
                         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
