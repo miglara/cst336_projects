@@ -11,7 +11,6 @@
     
     // Checks to see if the search form has been submitted
     if (isset($_GET['query'])) {
-        
         // Get access to our API function
         include 'wmapi.php';
         $items = getProducts($_GET['query']);
@@ -19,7 +18,6 @@
     
     // If the 'itemName' is set, put it in the session cart and direct the user to the shopping cart
     if (isset($_POST['itemName'])) {
-        
         // Create associative array for item properties
         $newItem = array();
         $newItem['name'] = $_POST['itemName'];
@@ -42,9 +40,7 @@
             $newItem['quantity'] = 1;
             array_push($_SESSION['cart'], $newItem);
         }
-        
     }
-    
 ?>
 
 <!DOCTYPE html>
