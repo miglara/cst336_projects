@@ -3,7 +3,7 @@
     include '../dbConnection.php';
     $dbConn = getDatabaseConnection("pets");    
     $sql = "SELECT *, YEAR(CURDATE()) - yob age 
-            FROM adoptees 
+            FROM pets 
             WHERE id = :id";
     $stmt = $dbConn -> prepare($sql);
     $stmt -> execute(array("id"=>$_GET['id']));
