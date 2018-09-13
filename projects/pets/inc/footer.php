@@ -1,5 +1,5 @@
         <footer>
-            Disclaimer: The information is this site is not real.
+            Disclaimer: The information in this site is not real.
         </footer>
 
     </body>
