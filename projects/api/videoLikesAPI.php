@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 
 //File used by the "video likes" challenge/practice activity.
 //with this proxy, users can keep using the "https" protocol even though the AJAX calls use "http"
