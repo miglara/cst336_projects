@@ -2,6 +2,7 @@
     body {
         background-color: black;
         color: white;
+        text-align: center;
     }
     
     header, main, nav, footer {
@@ -49,4 +50,8 @@
     .hobby {
         color: yellow;
     }
-    
+    h1{
+        font-family: 'Pacifico', cursive;
+        font-size: 4em;
+        margin-bottom: 0px;
+    }
