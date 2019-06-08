@@ -1,4 +1,4 @@
-    header, nav, footer {
+    header, nav, footer, #content {
         width: 960px;
         margin: 0 auto; 
         text-align: center; 
@@ -20,12 +20,6 @@
         margin-bottom: 0px;
     }
 
-    
-    main {
-        display: flex;
-        justify-content: center;
-    }
-
     nav a {
         padding:15px;
         padding-bottom:4px;
@@ -40,7 +34,11 @@
          transition: .9s;
     }
     
-       aside {
+    aside, section {
+        float:left;
+    }
+    
+    aside {
         text-align: left;
         padding-left: 10px;
         padding-top:  50px;
@@ -81,4 +79,3 @@
     .hobby {
         color: yellow;
     }
-    
