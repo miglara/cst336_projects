@@ -10,8 +10,8 @@ header("Access-Control-Allow-Origin: *");
     if (isset($_GET['data'])) {
        $parameters .="&data=". $_GET['data'];
     }    
-    if (isset($_GET['pop'])) {
-       $parameters .="&pop=". $_GET['pop'];
+    if (isset($_GET['pob'])) {
+       $parameters .="&pob=". $_GET['pob'];
     }  
     $url = "http://myspace.csumb.edu/~milara/ajax/superheroes/superheroesAPI.php". $parameters;
     $ch = curl_init();
