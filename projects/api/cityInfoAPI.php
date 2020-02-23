@@ -9,7 +9,7 @@ header("Access-Control-Allow-Origin: *");
     if (isset($_GET['zip'])) {
        $parameters .="zip=". $_GET['zip'];
     }
-    $url = "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php". $parameters;
+    $url = "https://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php". $parameters;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
