@@ -13,9 +13,10 @@ header("Access-Control-Allow-Origin: *");
     if (isset($_GET['pob'])) {
        $parameters .="&pob=". $_GET['pob'];
     }  
-    $url = "http://myspace.csumb.edu/~milara/ajax/superheroes/superheroesAPI.php". $parameters;
+    $url = "https://myspace.csumb.edu/~milara/ajax/superheroes/superheroesAPI.php". $parameters;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //allows connecting to https
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec ($ch);
     curl_close ($ch);
