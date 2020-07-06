@@ -9,9 +9,10 @@ header("Access-Control-Allow-Origin: *");
     if (isset($_GET['state'])) {
        $parameters .="state=". $_GET['state'];
     }
-    $url = "http://itcdland.csumb.edu/~milara/ajax/countyList.php". $parameters;
+    $url = "https://itcdland.csumb.edu/~milara/ajax/countyList.php". $parameters;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //allows connecting to https
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $result = curl_exec ($ch);
     curl_close ($ch);
