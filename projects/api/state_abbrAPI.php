@@ -5,7 +5,7 @@ header("Access-Control-Allow-Origin: *");
 //with this proxy, users can get the list of all states with their two-letter abbreviation
 
 
-    $url = "http://itcdland.csumb.edu/~milara/ajax/states.php";
+    $url = "https://itcdland.csumb.edu/~milara/ajax/states.php";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
