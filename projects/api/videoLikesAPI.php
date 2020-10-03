@@ -12,7 +12,7 @@ header("Access-Control-Allow-Origin: *");
     if (isset($_GET['action'])) {
        $parameters .="&action=". $_GET['action'];
     }    
-    $url = "http://myspace.csumb.edu/~milara/ajax/videosAPI.php". $parameters;
+    $url = "https://itcdland.csumb.edu/~milara/ajax/videosAPI.php". $parameters;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
